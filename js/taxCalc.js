@@ -1,155 +1,150 @@
-// Tax Calculator
 
-
-//init function
 function taxCalc() {
-    //Store user answers
-    var itemCost = document.getElementById("theCost").value;
-    var theState = document.getElementById("stateSelect").value;
 
-
-
-	//Init neccesary variables
-	var salesTax; 
+	//init vars
+	var itemCost = parseInt(document.getElementById('theCost').value, 10);
+	var theState = document.getElementById('stateSelect').value;
 	var taxAmt;
 	var subTotal;
+	var salesTax;
 
 
-	//Check if number
 	if (isNaN(itemCost)) 
 	{
 
 		alert("Must input numbers");
-		itemCost = prompt("What is the cost of item?");
+
 
 	}
 
 
-	//Check State and adjust tax accordingly
-
-	if (theState == "Alaska" || "Delaware" || "Montana" || "New Hampshire" || "Oregon"){
-
-		salesTax = 1
+	if(theState == "--"){
+		alert("Select your State");
 
 	}
-	else if (theState == "Arkansas" || "Kansas" || "Washington" ){
+	else if (theState == "Alaska" || theState == "Delaware" || theState == "Montana" || theState == "New Hampshire" || theState == "Oregon"){
 
-		salesTax = .065
-
-	}
-	else if (theState == "Florida" || "Idaho" || "Iowa" || "Kentucky" || "Maryland" || "Michigan" || "Pennsylvania" || "Vermont" || "South Carolina" || "West Virginia"){
-
-		salesTax = .06
+		salesTax = 0;
 
 	}
-	else if (theState == "Georgia" || "Hawaii" || "New York" || "Alabama" || "Wyoming"){
+	else if (theState == "Arkansas" || theState == "Kansas" || theState == "Washington" ){
 
-		salesTax = .04
-
-	}
-	else if (theState == "Indiana" || "Mississippi" || "New Jersey" || "Rhode Island" || "Tennesse" ){
-
-		salesTax = .07
+		salesTax = .065;
 
 	}
-	else if (theState == "Louisiana" || "North Dakota" || "Wisconsin" ){
+	else if (theState == "Florida" || theState == "Idaho" || theState == "Iowa" || theState == "Kentucky" || theState == "Maryland" || theState == "Michigan" || theState == "Pennsylvania" || theState == "Vermont" || theState == "South Carolina" || theState == "West Virginia"){
 
-		salesTax = .05
-
-	}
-	else if (theState == "Maine" || "Nebraska" ){
-
-		salesTax = .055
+		salesTax = .06;
 
 	}
-	else if (theState == "Oklahoma" || "South Dakota" ){
+	else if (theState == "Georgia" || theState == "Hawaii" || theState == "New York" || theState == "Alabama" || theState ==  "Wyoming"){
 
-		salesTax = .045
+		salesTax = .04;
 
 	}
-	else if (theState == "Illinois" || "Texas" ){
+	else if (theState == "Indiana" || theState ==  "Mississippi" || theState ==  "New Jersey" || theState ==  "Rhode Island" || theState ==  "Tennesse" ){
 
-		salesTax = .06250
+		salesTax = .07;
+
+	}
+	else if (theState == "Louisiana" || theState ==  "North Dakota" || theState ==  "Wisconsin" ){
+
+		salesTax = .05;
+
+	}
+	else if (theState == "Maine" || theState == "Nebraska" ){
+
+		salesTax = .055;
+
+	}
+	else if (theState == "Oklahoma" || theState == "South Dakota" ){
+
+		salesTax = .045;
+
+	}
+	else if (theState == "Illinois" || theState == "Texas" ){
+
+		salesTax = .06250;
 
 	}
 	else if (theState == "Arizona" ){
 
-		salesTax = .056
+		salesTax = .056;
 
 	}
 	else if (theState == "California" ){
 
-		salesTax = .075
+		salesTax = .075;
 
 	}
 	else if (theState == "Colorado" ){
 
-		salesTax = .029
+		salesTax = .029;
 
 	}
 	else if (theState == "Connecticut" ){
 
-		salesTax = .06350
+		salesTax = .06350;
 
 	}
 	else if (theState == "Nevada" ){
 
-		salesTax = .0685
+		salesTax = .0685;
 
 	}
 	else if (theState == "Massachusetts" ){
 
-		salesTax = .062
+		salesTax = .062;
 
 	}
 	else if (theState == "Minnesota" ){
 
-		salesTax = .06875
+		salesTax = .06875;
 
 	}
 	else if (theState == "Missouri" ){
 
-		salesTax = .04225
+		salesTax = .04225;
 
 	}
-	else if (theState == "New Mexico" ){
+	else if (theState == "New Meixco" ){
 
-		salesTax = .05125
+		salesTax = .05125;
 
 	}
 	else if (theState == "North Carolina" ){
 
-		salesTax = .04750
+		salesTax = .04750;
 
 	}
 	else if (theState == "Ohio" ){
 
-		salesTax = .05750
+		salesTax = .05750;
 
 	}
 	else if (theState == "Utah" ){
 
-		salesTax = .047
+		salesTax = .047;
 
 	}
 	else if (theState == "Virginia"){
 
-		salesTax = .043
+		salesTax = .043;
 
 	}
 
-
-	//Perform Equation
+	
 
 	taxAmt = itemCost * salesTax;
 
 	subTotal = taxAmt + itemCost;
 
-	alert(subTotal);
+	var taxPercent = salesTax * 100;
+
+
+	document.getElementById("totalOutPut").innerHTML = "$" + subTotal.toFixed(2);
+	document.getElementById("taxOutPut").innerHTML = taxPercent + "%"; 
 }
 
-
-// //write result in content div
-// document.getElementById("demo").innerHTML = taxCalc();
 
 

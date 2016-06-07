@@ -143,6 +143,7 @@ function taxCalc() {
 
 
 	document.getElementById("totalOutPut").innerHTML = "$" + subTotal.toFixed(2);
+		document.getElementById("taxAmtOutPut").innerHTML = "$" + taxAmt.toFixed(2);
 	document.getElementById("taxOutPut").innerHTML = taxPercent + "%"; 
 }
 

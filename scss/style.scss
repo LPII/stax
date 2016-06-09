@@ -11,6 +11,7 @@
 $main-font:'Roboto', sans-serif;
 $main-green:#18c77b;
 $main-blue:#34495e;
+$dark-blue:#2E4052;
 $dark-green:#0ea362;
 $light-blue:#798795;
 
@@ -33,11 +34,14 @@ $light-blue:#798795;
 }
 
 
-// Styles 
+// Base Styles 
 
 body{
 	background:$main-blue;
 }
+
+
+// Element Styles
 
 .top-wrap{
 	background:$main-blue;
@@ -61,46 +65,68 @@ body{
 					text-align:center;
 					padding: 4.6rem 0px;
 					font-size: 2rem;
+					margin:0;
+					padding-bottom:2.2rem;
 				}
 
 			}
 
-			.row{
-				.six{
-					input, select{
-						height:60px;
-						font-size:2rem;
-						font-family:$main-font;
-					}
-					
-				}
-			}
+		}
 
-			.btnrow{
-				padding:5rem;
-				.btn{
-					background:$main-green;
-					padding:1.2rem;
-					display:block;
-					margin:0 auto;
-					text-decoration:none;
-					color:white;
-					font-family:$main-font;
+	}
+}
+
+.inp-wrap{
+	background:$main-blue;
+	padding:1.5rem 0;
+	padding-top:5rem;
+	.container{
+		.row{
+			.six{
+				input, select{
+					height:60px;
 					font-size:2rem;
-					text-align:center;
-					max-width:250px;
-					@include radius(3px);
-					@include transition(all 150ms ease-in-out);
-					&:hover{
-						background:$dark-green;
-						    @include transition(all 150ms ease-in-out);
+					font-family:$main-font;
+				}
+				input{
+					background:url('../images/dsign.png')8px center no-repeat ;
+					    text-indent: 26px;
+    color: white;
+				}
+				select{
+					background:transparent;
+					color:white;
+					option{
+						color:$dark-blue;
 					}
 				}
-
 			}
+		}
+		.btnrow{
+			padding:5rem;
+			.btn{
+				background:$main-green;
+				padding:1.2rem;
+				display:block;
+				margin:0 auto;
+				text-decoration:none;
+				color:white;
+				font-family:$main-font;
+				font-size:2rem;
+				text-align:center;
+				max-width:250px;
+				@include radius(3px);
+				@include transition(all 150ms ease-in-out);
+				&:hover{
+					background:$dark-green;
+					@include transition(all 150ms ease-in-out);
+				}
+			}
+
 		}
 	}
 }
+
 
 .out-wrap{
 	background:$main-green;
@@ -113,10 +139,11 @@ body{
 				text-align:center;
 				margin:0;
 				padding: 2.3rem;
+				@include transition(all 350ms ease-in-out);
 				span{
 					font-size:2.2rem;
-						font-weight:bold;
-					}
+					font-weight:bold;
+				}
 
 
 			}
@@ -131,12 +158,13 @@ body{
 			margin:0;
 			font-size: 10rem;
 			padding: 2rem;
+			@include transition(all 350ms ease-in-out);
 		}
 	}
 }
 
 footer{
-	background:$main-blue;
+	background:$dark-blue;
 	padding: 3rem;
 	.container{
 		.row{
@@ -154,10 +182,10 @@ footer{
 						text-decoration:none;
 						font-weight:bold;
 						font-family:$main-font;
-						 @include transition(all 150ms ease-in-out);
+						@include transition(all 150ms ease-in-out);
 						&:hover{
 							text-decoration:underline;
-							 @include transition(all 150ms ease-in-out);
+							@include transition(all 150ms ease-in-out);
 
 						}
 					}

@@ -1,0 +1,168 @@
+// Imports
+
+@import "base/normalize",
+"base/skeleton";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+
+
+// Variables
+
+$main-font:'Roboto', sans-serif;
+$main-green:#18c77b;
+$main-blue:#34495e;
+$dark-green:#0ea362;
+$light-blue:#798795;
+
+
+
+// Mixins
+
+@mixin transition($args...){
+	-webkit-transition:$args;
+	-moz-transition:$args;
+	-ms-transition:$args;
+	-o-transition:$args;
+	transition:$args;
+}
+
+@mixin radius($args...){
+	-webkit-border-radius:$args;
+	-moz-border-radius:$args;
+	border-radius:$args;
+}
+
+
+// Styles 
+
+body{
+	background:$main-blue;
+}
+
+.top-wrap{
+	background:$main-blue;
+	padding:8rem 0;
+	padding-bottom:1.5rem;
+	.container{
+		.row{
+			.twelve{
+				header{
+
+					img{
+						display:block;
+						margin:0 auto;
+						max-width:100%;
+					}
+
+				}
+				p{
+					color:White;
+					font-family:$main-font;
+					text-align:center;
+					padding: 4.6rem 0px;
+					font-size: 2rem;
+				}
+
+			}
+
+			.row{
+				.six{
+					input, select{
+						height:60px;
+						font-size:2rem;
+						font-family:$main-font;
+					}
+					
+				}
+			}
+
+			.btnrow{
+				padding:5rem;
+				.btn{
+					background:$main-green;
+					padding:1.2rem;
+					display:block;
+					margin:0 auto;
+					text-decoration:none;
+					color:white;
+					font-family:$main-font;
+					font-size:2rem;
+					text-align:center;
+					max-width:250px;
+					@include radius(3px);
+					@include transition(all 150ms ease-in-out);
+					&:hover{
+						background:$dark-green;
+						    @include transition(all 150ms ease-in-out);
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.out-wrap{
+	background:$main-green;
+	.mes-wrap{
+		background:$dark-green;
+		.container{
+			p{
+				font-size:2rem;
+				color:white;
+				text-align:center;
+				margin:0;
+				padding: 2.3rem;
+				span{
+					font-size:2.2rem;
+						font-weight:bold;
+					}
+
+
+			}
+
+		}
+	}
+	.container{
+		h1{
+			color:white;
+			font-family:$main-font;
+			text-align:center;
+			margin:0;
+			font-size: 10rem;
+			padding: 2rem;
+		}
+	}
+}
+
+footer{
+	background:$main-blue;
+	padding: 3rem;
+	.container{
+		.row{
+			.twelve{
+				p{
+					color:$light-blue;
+					font-family:$main-font;
+					text-align:center;
+					margin:0;
+					font-size:1.8rem;
+
+
+					a{
+						color:white;
+						text-decoration:none;
+						font-weight:bold;
+						font-family:$main-font;
+						 @include transition(all 150ms ease-in-out);
+						&:hover{
+							text-decoration:underline;
+							 @include transition(all 150ms ease-in-out);
+
+						}
+					}
+				}
+			}
+		}
+	}
+}

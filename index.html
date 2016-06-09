@@ -1,103 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>Tax Calculator</title>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>s.tax | A lightweight sales tax calculator</title>
+  <meta name="description" content="A lightweight sales tax calculator written in Javascript">
+  <meta name="author" content="Lance Porter II">
 
-<script src="js/taxCalc.js"></script>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/faviconv2.png">
+
+  <!-- Scripts
+  -------------------------------------------------- -->
+
+  <script src="js/taxCalc.js"></script>
+
 </head>
-
-
-
 <body>
 
+
+  <div class="top-wrap">
+    <div class="container ">
+      <div class="row">
+
+        <div class="twelve columns">
+          <header>
+            <img src="images/top-logo.png" alt="">
+          </header>
+          <p>The price on the price tag may not be what you pay.</br> Type your amount and select your state below to calculate your dreaded sales tax.</p>
+        </div>
+        <div class="row">
+          <div class="six columns">
+            <input id="theCost" placeholder="What was the price?" class="u-full-width" type="text">
+          </div>
+          <div class="six columns">
+            <select class="u-full-width"  id="stateSelect" onchange="">
+              <option value="--">Select Your State</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="btnrow row">
+          <div class="twelve columns">
+            <a class="btn" onClick="taxCalc()" href="javascript:void(0)">Calculate</a>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="row-wrap out-wrap">
+  <div class="mes-wrap">
+    <div class="container">
+      <div class="row">
+        <div id="mesOutPut" class="twelve columns">
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div id="totalOutPut" class="twelve columns">
+      
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <footer>
+
+<div class="container">
+  <div class="row">
+    <div class="twelve columns">
+      <p>This is a <a href="">project </a>by <a href="">Lance Porter</a>, written in vanilla Javascript and presented using the  <a href="#">Skeleton framework.</a></p>
+    </div>
+  </div>
+</div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
   <header>
     <h1>Tax Calculator</h1>
   </header>
 
   <div class="main-wrapper">
 
-<form action="">
-<h3>Item Price:</h3>
- $ <input id="theCost" type="text" value=""> </br>
- 
-  <h3>State you live in:</h3>
+    <form action="">
+      <h3>Item Price:</h3>
+      $ <input id="theCost" type="text" value=""> </br>
+      
+      <h3>State you live in:</h3>
 
-   <select id="stateSelect" onchange="">
-<option value="--">--</option>
-<option value="Alabama">Alabama</option>
-<option value="Alaska">Alaska</option>
-<option value="Arizona">Arizona</option>
-<option value="Arkansas">Arkansas</option>
-<option value="California">California</option>
-<option value="Colorado">Colorado</option>
-<option value="Connecticut">Connecticut</option>
-<option value="Delaware">Delaware</option>
-<option value="Florida">Florida</option>
-<option value="Georgia">Georgia</option>
-<option value="Hawaii">Hawaii</option>
-<option value="Idaho">Idaho</option>
-<option value="Illinois">Illinois</option>
-<option value="Indiana">Indiana</option>
-<option value="Iowa">Iowa</option>
-<option value="Kansas">Kansas</option>
-<option value="Kentucky">Kentucky</option>
-<option value="Louisiana">Louisiana</option>
-<option value="Maine">Maine</option>
-<option value="Maryland">Maryland</option>
-<option value="Massachusetts">Massachusetts</option>
-<option value="Michigan">Michigan</option>
-<option value="Minnesota">Minnesota</option>
-<option value="Mississippi">Mississippi</option>
-<option value="Missouri">Missouri</option>
-<option value="Montana">Montana</option>
-<option value="Nebraska">Nebraska</option>
-<option value="Nevada">Nevada</option>
-<option value="New Hampshire">New Hampshire</option>
-<option value="New Jersey">New Jersey</option>
-<option value="New Mexico">New Mexico</option>
-<option value="New York">New York</option>
-<option value="North Carolina">North Carolina</option>
-<option value="North Dakota">North Dakota</option>
-<option value="Ohio">Ohio</option>
-<option value="Oklahoma">Oklahoma</option>
-<option value="Oregon">Oregon</option>
-<option value="Pennsylvania">Pennsylvania</option>
-<option value="Rhode Island">Rhode Island</option>
-<option value="South Carolina">South Carolina</option>
-<option value="South Dakota">South Dakota</option>
-<option value="Tennessee">Tennessee</option>
-<option value="Texas">Texas</option>
-<option value="Utah">Utah</option>
-<option value="Vermont">Vermont</option>
-<option value="Virginia">Virginia</option>
-<option value="Washington">Washington</option>
-<option value="West Virginia">West Virginia</option>
-<option value="Wisconsin">Wisconsin</option>
-<option value="Wyoming">Wyoming</option>
-</select>
-</form>
-</br>
- <input type="button" id="calculate" value="Calculate" onclick="taxCalc()">
-<div id="outPut">
-  
+    
+    </form>
+  </br>
+  <input type="button" id="calculate" value="Calculate" onclick="taxCalc()">
+  <div id="outPut">
+    
 
-  <h2 id="taxOutPut"></h2>
+    <h2 id="taxOutPut"></h2>
 
     <h2 id="taxAmtOutPut"></h2>
-<h1 id="totalOutPut"></h1>
+    <h1 id="totalOutPut"></h1>
 
 
-</div>
   </div>
+</div>
 
 
 
-  <footer>
+<footer>
 
-  </footer>
-
+</footer>
+-->
 </body>
 </html>

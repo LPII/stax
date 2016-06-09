@@ -142,10 +142,9 @@ function taxCalc() {
 	var taxPercent = salesTax * 100;
 
 
-	document.getElementById("totalOutPut").innerHTML = "$" + subTotal.toFixed(2);
-		document.getElementById("taxAmtOutPut").innerHTML = "$" + taxAmt.toFixed(2);
-	document.getElementById("taxOutPut").innerHTML = taxPercent + "%"; 
-}
+	document.getElementById("totalOutPut").innerHTML = "<h1>" + "$" + subTotal.toFixed(2); + "</h1>"
+	document.getElementById("mesOutPut").innerHTML = "<p>" + "<span>" + theState + "</span>" + " has a sales tax of " + "<span>" + taxPercent.toFixed(2) + "</span>" + "%," + " which means you will pay an extra " + "$" + "<span>" + taxAmt.toFixed(2) + "</span>" + "</p>";
 
+}
 
 

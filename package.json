@@ -1,0 +1,37 @@
+{
+  "name": "stax",
+  "version": "1.1.0",
+  "description": "A simple sales tax calculator written in javascript.",
+  "main": "src/index.html",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-deploy-ftp": "^1.0.0",
+    "gulp-directory-sync": "^1.2.3",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.0",
+    "gulp-wait": "0.0.2",
+    "run-sequence": "^1.2.2",
+    "vinyl-ftp": "^0.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LPII/stax.git"
+  },
+  "author": "LPII",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LPII/stax/issues"
+  },
+  "homepage": "https://github.com/LPII/stax#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

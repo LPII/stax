@@ -3,19 +3,40 @@ import stateTaxRates from '../data/stateTaxRates.json';
 
 
 
-const Inputs = () => {
+const Inputs = ({ onResultReady }) => {
 
     const [userCost, setCost] = useState('');
     const [userTaxRate, setRate] = useState('');
+    const [userStateName, setStateName] = useState('');
 
-    const handleCaclulate = () => {
+    const roundNumber = (number) => {
+        return (Math.round( number * 100) / 100)
+    }
 
+    const handleCalculate = () => {
         
-
-        const numCost = parseFloat(userCost, 10);
-        const taxRate = parseFloat(userTaxRate);
-
-        console.log(numCost + (numCost * taxRate));
+        const numCost = parseFloat(userCost, 10)
+        const taxRate = roundNumber(parseFloat(userTaxRate))
+        const finalPrice = roundNumber(numCost + (numCost * taxRate))
+        const result = {
+            numCost,
+            taxRate,
+            finalPrice,
+            userStateName,
+            statePercent: roundNumber(taxRate * 100),
+            userDifference: roundNumber(finalPrice - numCost)
+        }
+        if(!Number.isFinite(numCost) ){
+            //error if number not entered 
+            console.log("enter number")
+            return
+        } else if(!Number.isFinite(taxRate)){
+            //error if no state selected
+            console.log("pick state")
+            return
+        }
+        onResultReady(result)
+        console.log(result);
     };
 
     return (
@@ -33,8 +54,18 @@ const Inputs = () => {
                         />
                     </div>
                     <div className="six columns">
-                        <select className="u-full-width" id="stateSelect" onChange={(e) => setRate(stateTaxRates[e.target.value].rate) }>
-                
+                        <select className="u-full-width" id="stateSelect" onChange={(e) => {
+                            if(e.target.value){
+                                setRate(stateTaxRates[e.target.value].rate)
+                                setStateName(stateTaxRates[e.target.value].name)
+                            }else{
+                                console.log("select state")
+                                setRate("")
+                                setStateName("")
+                            }
+                            
+                        } }>
+                        <option value="">Select State</option>
                             {Object.keys(stateTaxRates).map((code) => (
                                 <option key={code} value={code} data-rate={stateTaxRates[code].rate}>{stateTaxRates[code].name}</option>
                             ))}
@@ -49,7 +80,7 @@ const Inputs = () => {
                         <button
                             type="button"
                             className="btn"
-                            onClick={handleCaclulate}
+                            onClick={handleCalculate}
                         >
                             Calculate
                         </button>

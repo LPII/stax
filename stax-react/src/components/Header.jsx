@@ -1,3 +1,5 @@
+import topLogo from '../assets/top-logo.png';
+
 const Header = () => {
     return (
         <div className="top-wrap">
@@ -5,7 +7,7 @@ const Header = () => {
                 <div className="row">
                     <div className="twelve columns">
                         <header>
-                            <img src="images/top-logo.png" alt="" />
+                            <img src={topLogo} alt="" />
                         </header>
                         <p>The price on the price tag may not be what you pay.<br />
                             Type your amount and select your state below to

@@ -1,8 +1,16 @@
+import Header from "./components/Header"
+import Results from "./components/Results"
+import Inputs from "./components/Inputs"
+
 function App() {
 
 
   return (
-    <h1>Stax React</h1>
+    <>
+      <Header />
+      <Results />
+      <Inputs />
+    </>
   )
 }
 

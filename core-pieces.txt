@@ -1,4 +1,0 @@
-core markup -> index.html
-core js -> core.js
-styles -> scss folder 
-images -> img folder 

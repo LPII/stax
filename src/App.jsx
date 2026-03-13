@@ -13,7 +13,7 @@ function App() {
   const storeResult = (resultData) => setResult(resultData)
   const sendAlert = (message) => {
     setUserAlert(message)
-    setResult("")
+    setResult("") //wipe result
   }
 
   return (

@@ -1,6 +1,7 @@
 import topLogo from '../assets/top-logo.png';
+import Alert from "../components/Alert";
 
-const Header = () => {
+const Header = ({ alertText }) => {
     return (
         <div className="top-wrap">
             <div className="container ">
@@ -13,6 +14,10 @@ const Header = () => {
                             Type your amount and select your state below to
                             calculate your dreaded sales tax.</p>
                     </div>
+                    <div className="twelve columns">
+                        <div className="alert"><Alert alertText={alertText} /></div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

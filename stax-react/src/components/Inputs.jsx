@@ -3,7 +3,7 @@ import stateTaxRates from '../data/stateTaxRates.json';
 
 
 
-const Inputs = ({ onResultReady }) => {
+const Inputs = ({ onResultReady, sendAlert }) => {
 
     const [userCost, setCost] = useState('');
     const [userTaxRate, setRate] = useState('');
@@ -27,14 +27,16 @@ const Inputs = ({ onResultReady }) => {
             userDifference: roundNumber(finalPrice - numCost)
         }
         if(!Number.isFinite(numCost) ){
-            //error if number not entered 
-            console.log("enter number")
-            return
-        } else if(!Number.isFinite(taxRate)){
-            //error if no state selected
-            console.log("pick state")
+            //error if number not entered
+            sendAlert("Add your price")
             return
         }
+        if(!Number.isFinite(taxRate)){
+            //error if no state selected
+            sendAlert("Pick A State")
+            return
+        }
+        sendAlert("") 
         onResultReady(result)
         console.log(result);
     };
@@ -59,7 +61,6 @@ const Inputs = ({ onResultReady }) => {
                                 setRate(stateTaxRates[e.target.value].rate)
                                 setStateName(stateTaxRates[e.target.value].name)
                             }else{
-                                console.log("select state")
                                 setRate("")
                                 setStateName("")
                             }

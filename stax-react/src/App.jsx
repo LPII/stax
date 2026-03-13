@@ -4,19 +4,23 @@ import Results from "./components/Results"
 import Inputs from "./components/Inputs"
 import Footer from "./components/Footer"
 
+
 function App() {
 
   const [result, setResult] = useState("");
+  const [userAlert, setUserAlert] = useState("")
 
-  const storeResult = (resultData) =>{
-    setResult(resultData)
+  const storeResult = (resultData) => setResult(resultData)
+  const sendAlert = (message) => {
+    setUserAlert(message)
+    setResult("")
   }
 
   return (
     <>
-      <Header />
+      <Header alertText={userAlert}/>
       <Results  userResult={result} />
-      <Inputs onResultReady={storeResult}/>
+      <Inputs onResultReady={storeResult} sendAlert={sendAlert}/>
       <Footer />
     </>
   )

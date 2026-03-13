@@ -41,6 +41,7 @@ body {
             max-width: 100%;
           }
         }
+
         p {
           color: white;
           font-family: $main-font;
@@ -57,33 +58,39 @@ body {
 
 .inp-wrap {
   background: $main-blue;
-  padding: 0 1.5rem ;
- 
+  padding: 0 1.5rem;
+
   .container {
     .row {
       .six {
+
         input,
         select {
           height: 60px;
           font-size: 2rem;
           font-family: $main-font;
         }
+
         input {
           background: url('../assets/dsign.png') 8px center no-repeat;
           text-indent: 26px;
           color: white;
         }
+
         select {
           background: transparent;
           color: white;
+
           option {
             color: $dark-blue;
           }
         }
       }
     }
+
     .btnrow {
       padding: 2.5rem 5rem;
+
       .btn {
         background: $main-green;
         padding: 1.2rem;
@@ -103,6 +110,7 @@ body {
         border: none;
         @include radius(3px);
         @include transition(all 150ms ease-in-out);
+
         &:hover {
           background: $dark-green;
           @include transition(all 150ms ease-in-out);
@@ -115,8 +123,10 @@ body {
 .out-wrap {
   background: $main-green;
   margin-bottom: 3rem;
+
   .mes-wrap {
     background: $dark-green;
+
     .container {
       p {
         font-size: 2rem;
@@ -125,6 +135,7 @@ body {
         margin: 0;
         padding: 2.3rem;
         @include transition(all 350ms ease-in-out);
+
         span {
           font-size: 2.2rem;
           font-weight: bold;
@@ -132,6 +143,7 @@ body {
       }
     }
   }
+
   .container {
     h1 {
       color: white;
@@ -145,10 +157,28 @@ body {
   }
 }
 
+.alert {
+  text-align:center;
+  &-text {
+    text-align: center;
+    color: white;
+    background: red;
+    margin:15px 20px;
+    padding:10px;
+    text-transform: uppercase;
+    font-weight:bold;
+    letter-spacing: 2px;
+    font-size:15px;
+    display: inline-block;
+    @include radius(2px);
+  }
+}
+
 footer {
   background: $dark-blue;
   padding: 3rem;
   margin-top: 5rem;
+
   .container {
     .row {
       .twelve {
@@ -158,12 +188,14 @@ footer {
           text-align: center;
           margin: 0;
           font-size: 1.8rem;
+
           a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             font-family: $main-font;
             @include transition(all 150ms ease-in-out);
+
             &:hover {
               text-decoration: underline;
               @include transition(all 150ms ease-in-out);
@@ -174,4 +206,3 @@ footer {
     }
   }
 }
-
